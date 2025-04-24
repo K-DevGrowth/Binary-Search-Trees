@@ -196,7 +196,11 @@ class Tree {
     }
 
     rebalance() {
-
+        if (!this.isBalanced(this.root)) {
+            const arr = [];
+            this.inOrder((data) => arr.push(data));
+            this.root = this.buildTree(arr);
+        }
     }
 }
 
